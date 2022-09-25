@@ -4,13 +4,15 @@ server:
 spring:
   application:
     name: pagination-application
+  profiles:
+    active: local
   datasource:
     url: jdbc:sqlserver://localhost:1461;databaseName=test;trustServerCertificate=true
     userName: sa
     password: ${mssql_pwd}
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
-    database-platform: org.hibernate.dialect.SQLServerDialect
+    database-platform: org.hibernate.dialect.SQLServer2008Dialect
     show-sql: true
     generate-ddl: true
     hibernate:
